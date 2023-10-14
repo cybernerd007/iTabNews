@@ -38,6 +38,7 @@ color: #fff;border-radius: 5px;border: 1px solid #6d6d6d;font-size: 12px;left: 3
 				#main .content .box-white p span {color:#4C556C;float:right;font-weight:normal;}
 					#main .content .box-white p span.detail {color: #999;float: none;font-size:12px;margin-left:5px;}
 					#main .content .box-white p span.arrow {color: #666;float: none;font-family: monospace;font-weight: bold;margin-left: 5px;text-shadow: 0 1px 1px #666;}
+			#main .content .box-white img {max-width: 100%;height: auto;}
 			
 			/* Tables */
 			#main table {margin:20px 0 10px;width:100%;}
