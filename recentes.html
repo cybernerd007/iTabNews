@@ -101,7 +101,7 @@
 			userList.innerHTML = '';
 			users.forEach(user => {
 				const li = document.createElement('p');
-				li.innerHTML = `<a href="./topico.html?dados=/${user.usuario}/${user.post}"><strong>${user.titulo}</strong><span>Criado por ${user.usuario}</span></a>`;
+				li.innerHTML = `<a href="./topico.html?dados=/${user.usuario}/${user.post}"><strong>${user.titulo}</strong><span> Criado por ${user.usuario}</span></a>`;
 				userList.appendChild(li);
 			});
 		}
