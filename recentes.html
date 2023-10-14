@@ -19,16 +19,22 @@
 				
 				<!--<a class="left" href="./login.html">Login</a>-->
 				<h1 class="title">iTabNews</h1>
-				<a class="right"href="./recentes.html">Recentes</a>
+				<a class="right" href="./">Relevantes</a>
 				
 			</div><!--header-->
 			
 			<div class="content">
 			
-				<h2 class="title2">Relevantes</h2>
+				<h2 class="title2">Recentes</h2>
+				
+				<!--<p>This is a normal paragraph to add any text you like.</p>-->
 
 				<div class="box-white">
                     <p id="dados"></p>
+					<!--<p>Parameter <span>Value</span></p>
+					<p><a href="?">Clickable row<span>Click me <span class="arrow">&gt;</span></span></a></p>
+					<p>Foo <span>Bar</span></p>
+					<p>Lorem ipsum <span><a href="?">Click only this</a></span></p>-->
 				</div><!--box-white-->
 			
 			</div><!--content-->
@@ -43,8 +49,10 @@
 			<div class="content">
 				
 				<ul class="nav">
-					<li><a href="./" class="active"><span class="ico msg"></span>Relevantes</a></li>
-                    <li><a href="./recentes.html"><span class="ico msg"></span>Recentes</a></li>
+					<li><a href="./"><span class="ico msg"></span>Relevantes</a></li>
+                    <li><a href="./recentes.html" class="active"><span class="ico msg"></span>Recentes</a></li>
+					<!--<li><a href="?"><span class="ico msg"></span>Red circle<span class="info">5</span></a></li>-->
+					<!--<li><a href="?"><span class="ico msg"></span>Status indicator <span>On</span></a></li>-->
 				</ul>
 				
 				<p>iTabNews foi criado pelo <a class="strong" href="https://www.tabnews.com.br/matrixs0beit">Otávio Augusto</a> feito em HTML, JS e CSS.</p>
@@ -57,14 +65,14 @@
 
     <script>
 		// Verifica se há dados em cache e se ainda são válidos
-		const cacheData = localStorage.getItem('tabNewsData');
-		const cacheTime = localStorage.getItem('tabNewsTime');
+		const cacheData = localStorage.getItem('tabNewsDataNew');
+		const cacheTime = localStorage.getItem('tabNewsTimeNew');
 		if (cacheData && cacheTime && Date.now() - cacheTime < 5 * 60 * 1000) {
 			const users = JSON.parse(cacheData);
 			populateList(users);
 		} else {
 			// Faz a solicitação à API
-			fetch('https://www.tabnews.com.br/api/v1/contents?page=1&strategy=relevant')
+			fetch('https://www.tabnews.com.br/api/v1/contents?page=1&strategy=new')
 				.then(response => response.json())
 				.then(data => {
 					// Trata a resposta da API e extrai os dados relevantes
@@ -78,8 +86,8 @@
 					}));
 
 					// Armazena os dados em cache
-					localStorage.setItem('tabNewsData', JSON.stringify(users));
-					localStorage.setItem('tabNewsTime', Date.now());
+					localStorage.setItem('tabNewsDataNew', JSON.stringify(users));
+					localStorage.setItem('tabNewsTimeNew', Date.now());
 
 					// Preenche a lista com os dados
 					populateList(users);
@@ -93,10 +101,11 @@
 			userList.innerHTML = '';
 			users.forEach(user => {
 				const li = document.createElement('p');
-				li.innerHTML = `<a href="./topico.html?dados=/${user.usuario}/${user.post}"><strong>${user.titulo}</strong><span> Criado por ${user.usuario}</span></a>`;
+				li.innerHTML = `<a href="./topico.html?dados=/${user.usuario}/${user.post}"><strong>${user.titulo}</strong><span>Criado por ${user.usuario}</span></a>`;
 				userList.appendChild(li);
 			});
 		}
 	</script>
+<!--<script type="text/javascript" src="script.js">-->
 </body>
 </html>
