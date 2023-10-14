@@ -20,6 +20,7 @@ html, #wrap {background:#d8dae0;font: 16px normal Helvetica,sans-serif;-webkit-u
 color: #fff;border-radius: 5px;border: 1px solid #6d6d6d;font-size: 12px;left: 310px;position: fixed;top: 9px;padding: 5px 8px;text-decoration:none;}
 			#main .header .title {}
 			#main .header .right {right: 10px;left: auto;}
+			#main .header .right{display: none;}
 		#main .content {}
 			#main .content>:first-child {margin-top:0 !important;}
 			#main .content .title {font-size:18px;font-weight:bold;margin:20px 0 10px;}
@@ -114,5 +115,7 @@ border-color:#9A8185;}
 	#main .content p input[type=text],
 	#main .content p input[type=password],
 	#main .content p select {width:60%;}
+
+	#main .header .right{display: block;}
 	
 }
