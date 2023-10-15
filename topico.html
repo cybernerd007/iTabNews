@@ -35,6 +35,14 @@
 				<div class="box-white">
 					<p id="dados"></p>
 				</div><!--box-white-->
+
+                <h2 class="title">Comentarios</h2>
+
+                <div class="box-white" id="data-container"></div>
+
+                <!--<div class="box-white">
+					<p id="data-container"></p>
+				</div>box-white-->
 			
 			</div><!--content-->
 		
@@ -120,6 +128,33 @@
         userList.appendChild(div2);
         userList.appendChild(div3);
     }
+    document.addEventListener("DOMContentLoaded", function() {
+
+    const apiUrl = `https://www.tabnews.com.br/api/v1/contents${dados}/children`; // Exemplo da API JSONPlaceholder para buscar um post.
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(datac => {
+            // Verifique se a API retornou dados
+            if (datac && Array.isArray(datac) && datac.length > 0) {
+                // Iterar pelos objetos no array
+                datac.forEach(item => {
+                    const ownerUsername = item.owner_username;
+                    const body = item.body;
+
+                    const userList = document.querySelector('#data-container');
+                    const divc = document.createElement('div');
+                    divc.innerHTML = `<p class="center" style="color:#800080">Comentado por ${ownerUsername}</p><br><p>${body}</p><br><hr>`;
+                    userList.appendChild(divc);
+                });
+            } else {
+                console.error('A API retornou dados vazios ou em um formato inesperado.');
+            }
+        })
+        .catch(error => {
+            console.error('Ocorreu um erro ao buscar os dados da API: ' + error);
+        });
+});
     </script>
 <!--<script type="text/javascript" src="script.js">-->
 </body>
