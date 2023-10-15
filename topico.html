@@ -132,7 +132,7 @@
         const horaFormatada = `${horas}h${minutos}`;
 
         //div.innerHTML = `<h1>${user.titulo}</h1>`;
-        tituloElement.textContent = `${user.titulo} - Tabcoins: ${user.coins} - Publicado em ${dataFormatada} as ${horaFormatada}`; // Define o título
+        tituloElement.textContent = `${user.titulo} | Tabcoins: ${user.coins} | Publicado em ${dataFormatada} as ${horaFormatada}`; // Define o título
         div1.innerHTML =converter.makeHtml(markdownText);
         div2.innerHTML = `<a class="center">Criado por <strong>${user.usuario}</strong></a>`;
         div3.innerHTML = `<input type="submit" class="button red" value="Post Original" onclick="window.location.href = 'https://www.tabnews.com.br/' + dados;">
