@@ -1,4 +1,12 @@
-# 🚀 iTabNews
+<h1 align="center">
+  <img src="https://www.tabnews.com.br/favicon-mobile.png" width=256 alt="">
+  <br />
+  iTabNews | <a href="https://itabnews.vercel.app/">Acessar</a>
+</h1>
+
+<p align="center"><i>o iTabNews usa a API do Tabnews e Aplicar a Ela Uma Nova Interface.</i></p>
+<p align="center"><img height=26 alt="" src="https://img.shields.io/badge/Feito com ❤️ para a Comunidade-20B2AA?style=for-the-badge"></p>
+
 
 ![PC](https://img001.prntscr.com/file/img001/6TTqCOpGQg-0BuAwbQvdMQ.png)
 
