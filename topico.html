@@ -165,7 +165,11 @@
                     userList.appendChild(divc);
                 });
             } else {
-                console.error('A API retornou dados vazios ou em um formato inesperado.');
+                //console.error('A API retornou dados vazios ou em um formato inesperado.');
+                const userList = document.querySelector('#data-container');
+                const divc = document.createElement('div');
+                divc.innerHTML = `<p class="center">Post sem Comentarios 😬</p>`;
+                userList.appendChild(divc);
             }
         })
         .catch(error => {
